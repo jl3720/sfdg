@@ -1,9 +1,9 @@
-name: cae
+name: sfdg
 channels:
+  - defaults
+  - conda-forge
   - fastai
   - pytorch
-  - conda-forge
-  - defaults
 dependencies:
   - _libgcc_mutex=0.1=main
   - _openmp_mutex=5.1=1_gnu
@@ -17,7 +17,6 @@ dependencies:
   - cffi=1.15.1=py38h74dc2b5_0
   - charset-normalizer=2.0.4=pyhd3eb1b0_0
   - cryptography=37.0.1=py38h9ce1e76_0
-  - cudatoolkit=11.3.1=h2bc3f7f_2
   - cycler=0.11.0=pyhd3eb1b0_0
   - dbus=1.13.18=hb2f20db_0
   - expat=2.4.9=h6a678d5_0
@@ -103,8 +102,6 @@ dependencies:
   - pysocks=1.7.1=py38h06a4308_0
   - python=3.8.13=h12debd9_0
   - python_abi=3.8=2_cp38
-  - pytorch=1.12.1=py3.8_cuda11.3_cudnn8.3.2_0
-  - pytorch-mutex=1.0=cuda
   - qt-main=5.15.2=h327a75a_7
   - qt-webengine=5.15.9=hd2b0992_4
   - qtwebkit=5.212=h4eab89a_4
@@ -116,12 +113,10 @@ dependencies:
   - six=1.16.0=pyhd3eb1b0_1
   - sqlite=3.39.3=h5082296_0
   - tbb=2021.5.0=hd09550d_0
-  - timm=0.6.7=py_0
   - tk=8.6.12=h1ccaba5_0
   - toml=0.10.2=pyhd3eb1b0_0
-  - torchaudio=0.12.1=py38_cu113
-  - torchvision=0.13.1=py38_cu113
   - tornado=6.2=py38h5eee18b_0
+  - timm==0.6.7
   - tqdm=4.64.1=py38h06a4308_0
   - typing_extensions=4.3.0=py38h06a4308_0
   - urllib3=1.26.11=py38h06a4308_0
@@ -145,4 +140,3 @@ dependencies:
     - scipy==1.9.1
     - threadpoolctl==3.1.0
     - wilds==2.0.0
-prefix: ~/.conda/envs/cae
