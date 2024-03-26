@@ -164,7 +164,7 @@ def main(args: argparse.Namespace):
     # Data loading code
 
     test_dataset, _ = utils.get_dataset(dataset_name=args.data, root=args.root, task_list=args.targets, split='test',
-                                        download=True, transform=preprocess, seed=args.seed)
+                                        download=args.download, transform=preprocess, seed=args.seed)
     test_loader = DataLoader(test_dataset, batch_size=args.batch_size, shuffle=False, num_workers=args.workers)
 
     print("test_dataset_size: ", len(test_dataset))
@@ -190,6 +190,9 @@ if __name__ == '__main__':
     # dataset parameters
     parser.add_argument('root', metavar='DIR',
                         help='root path of dataset')
+    parser.add_argument('--download', action='store_true', help='whether to download dataset or not')
+    parser.add_argument('--no-download', dest='download', action='store_false')
+    parser.set_defaults(download=True)
     parser.add_argument('-d', '--data', metavar='DATA', default='PACS',
                         help='dataset: ' + ' | '.join(utils.get_dataset_names()) +
                              ' (default: PACS)')

@@ -59,7 +59,8 @@ class PACS(ImageList):
         if download:
             list(map(lambda args: download_data(root, *args), self.download_list))
         else:
-            list(map(lambda file_name, _: check_exits(root, file_name), self.download_list))
+            print(f"\nself.download_list: {self.download_list}\n")
+            list(map(lambda dir_tup: check_exits(root, dir_tup[0]), self.download_list))
 
         super(PACS, self).__init__(root, PACS.CLASSES, data_list_file=data_list_file, target_transform=lambda x: x - 1,
                                    **kwargs)
