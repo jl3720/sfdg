@@ -10,6 +10,7 @@ Anonymous links are for the convenience of double-blind review and will not be L
 
 ```bash
 # create virtual environment and install packages
+# Hack: removed torch packages from yaml due to errors with cudatoolkit
 conda env create -f environment.yaml
 
 # activate virtual environment
@@ -17,6 +18,10 @@ conda activate cae
 
 # install tllib 
 python setup.py install
+
+# Hack: now install torch with CUDA 11.3 via pip: https://pytorch.org/get-started/previous-versions/
+$ pip install torch==1.12.1+cu113 torchvision==0.13.1+cu113 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu113
+
 ```
 
 
